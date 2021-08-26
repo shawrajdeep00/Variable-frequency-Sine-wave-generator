@@ -1,0 +1,35 @@
+close all
+clear all
+clc;
+
+f1=10000;
+f2=10000000;
+fp=100;
+% f1=input('Put the value of starting frequency: ');
+% f2=input('Put the value of ending frequency: ');
+
+
+%% Either linear or logarithmic scaling must be used during applying the code.
+
+%%Linear scalling (frequencty points generation in a linear scale)
+f = linspace(f1,f2, fp);
+t = linspace(0,0.000001,5000);
+%%
+
+%%Logarithmic scalling (frequencty points generation in a logerithmic scale)
+
+% f = logspace(4,7, 100);
+% t = linspace(0,0.0001,5000);
+
+
+%% Multifrequency generation
+
+for i=1:1:fp;
+    figure (1)
+    y = 4*sin(2*pi*(1*f(i))*t);
+    plot(t,y,'r','Linewidth', 3);
+    pause(1);
+end
+
+%%
+
